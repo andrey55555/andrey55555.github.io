@@ -1,0 +1,19 @@
+/* style placeholder */
+.test-z-index{margin:10px 0;position:relative}
+.test-z-index>p{border:2px solid;padding:10px}
+.first{background:#ede5e2}
+.last{background:#9bf0e9;margin:-10px 10px 10px}
+
+textarea.reviews__inp.focus{height:85px}
+
+.wrap-inp {position: relative;}
+.wrap-inp p {margin-bottom: 10px;}
+.placeholder {background:gold;color:#afafaf;line-height:41px;position:absolute;top:0;left:0;overflow:hidden;white-space:nowrap}
+
+.valid-error {
+    box-shadow: 0 0 2px red;
+}
+
+.valid-success {
+    box-shadow: 0 0 2px #00f;
+}

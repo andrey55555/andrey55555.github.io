@@ -1,0 +1,6 @@
+/* style callback */
+
+.bottomcontacts{margin-top:20px;text-align:center;width:100%}
+.bottomcontacts-phone{display:block;background:#EDDE45;padding:20px;margin:10px}
+.bottomcontacts-phone span{margin-left:30px;position:relative}
+.bottomcontacts-phone span::before{background-image:url('/img/phone-ico.png');content:"";height:16px;left:-30px;position:absolute;width:16px}

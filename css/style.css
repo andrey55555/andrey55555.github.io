@@ -13,22 +13,20 @@ img{vertical-align: top;}
 .wrapper{width: 100%;min-height: 100%;overflow: hidden;position: relative;}
 header{background:#61d2d6;margin:0 auto;max-width:1000px;padding:10px 5px}
 .content{margin:0 auto;max-width:1000px;padding:10px 5px}
+.reviews__inp{background-color:#fff;border:1px solid #afafaf;border-radius:3px;color:#000;font-family:Arial;margin-bottom:10px;padding:0 10px;resize:none}
+.btn{background-color:#61D2D6;border:1px solid #61D2D6;border-radius:3px;color:#fff;cursor:pointer;display:block;padding-top:0;text-align:center}
+.btn,.reviews__inp{font-size:18px;height:46px;width:100%}
 /* --/ System Styles */
 
 .dhr { border-bottom: 1px dotted; }
 
-.content-header{font-size:18px;padding:10px 0}
+.content-title{font-size:18px;padding:10px 0}
 
 
 /* --- index --- */
+.topmenu-item {margin: 5px 10px;}
 .detail-square{display:inline-block;margin:10px 0;width:33%}
 .detail-square-color {min-height: 50px;}
 .big-number-label{display:inline-block;text-align:center;width:45%}
 .big-number-label p {margin: 5px;}
 
-
-/* --- callback --- */
-.bottomcontacts{margin-top:20px;text-align:center;width:100%}
-.bottomcontacts-phone{display:block;background:#ff0;padding:20px;margin:10px}
-.bottomcontacts-phone span{margin-left:30px;position:relative}
-.bottomcontacts-phone span::before{background-image:url('/img/phone-ico.png');content:"";height:16px;left:-30px;position:absolute;width:16px}
