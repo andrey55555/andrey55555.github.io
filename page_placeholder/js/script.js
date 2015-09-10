@@ -60,8 +60,9 @@ var common_mob = (function(){
 
                 if ( $error != '' ){ return false; }
                 else {
-                        frm.submit();
-                        return true;
+                        frm.fadeOut(300);
+						frm.after('<div class="message-success"><span>OK!</span></div>');
+                        return false;
                 }
         }
 

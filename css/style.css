@@ -16,6 +16,9 @@ header{background:#61d2d6;margin:0 auto;max-width:1000px;padding:10px 5px}
 .reviews__inp{background-color:#fff;border:1px solid #afafaf;border-radius:3px;color:#000;font-family:Arial;margin-bottom:10px;padding:0 10px;resize:none}
 .btn{background-color:#61D2D6;border:1px solid #61D2D6;border-radius:3px;color:#fff;cursor:pointer;display:block;padding-top:0;text-align:center}
 .btn,.reviews__inp{font-size:18px;height:46px;width:100%}
+
+.message-success{background:#9F9;padding:20px;text-align:center}
+.message-error{background:#F99;padding:20px;text-align:center}
 /* --/ System Styles */
 
 .dhr { border-bottom: 1px dotted; }
@@ -23,7 +26,7 @@ header{background:#61d2d6;margin:0 auto;max-width:1000px;padding:10px 5px}
 .content-title{font-size:18px;padding:10px 0}
 
 
-/* --- index --- */
+/* --- color --- */
 .topmenu-item {margin: 5px 10px;}
 .detail-square{display:inline-block;margin:10px 0;width:33%}
 .detail-square-color {min-height: 50px;}
