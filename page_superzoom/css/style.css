@@ -3,6 +3,7 @@
 
 
 #vg_carousel,#vg_thumbs-wrapper{text-align:center}
+#vg_carousel .vg_ca_img,#vg_thumbs .vg_th_img{cursor:pointer;}
 #vg_carousel{height:440px}
 #vg_carousel .vg_ca_img img{max-height:550px;max-width:600px}
 #vg_thumbs-wrapper #vg_thumbs{height:80px;margin:0 auto}
@@ -10,6 +11,7 @@
 #vg_wrapper .vg_th_img{border:3px solid grey;border-radius:5px;display:inline-block;height:65px;margin:7px;width:95px}
 #vg_wrapper .vg_th_img.select{border:3px solid yellow;}
 
+#fvg_carousel .fvg_ca_img,#fvg_thumbs .fvg_th_img{cursor:pointer;}
 #fvg_wrapper {position:absolute;z-index:2;}
 #fvg_carousel,#fvg_thumbs-wrapper{text-align:center}
 #fvg_carousel{height:540px}
@@ -19,6 +21,7 @@
 #fvg_wrapper .fvg_th_img{border:3px solid grey;border-radius:5px;display:inline-block;height:100px;margin:7px;width:150px}
 #fvg_wrapper .fvg_th_img.select{border:3px solid yellow;}
 
+#fvg_wrapper-close span{background:#ede5e2;display:block;cursor:pointer;font-size:32px;height:18px;margin: 0 0 0 auto;width:18px}
 
 #vg_carousel .vg_ca_img.select, #fvg_carousel .fvg_ca_img.select {
     display: block;
