@@ -27,7 +27,12 @@ header{background:#61d2d6;margin:0 auto;max-width:1000px;padding:10px 5px}
 
 
 /* --- color --- */
-.topmenu-item {margin: 5px 10px;}
+.topmenu-item {display:inline-block;list-style:none;margin: 5px 0;}
+.topmenu-item span {padding: 3px;}
+.topmenu-item-txt {background:#edde45;border-radius: 5px;}
+
+.cloud-tags-item{display:inline-block;list-style:none;margin:5px}
+
 .detail-square{display:inline-block;margin:10px 0;width:33%}
 .detail-square-color {min-height: 50px;}
 .big-number-label{display:inline-block;text-align:center;width:45%}
