@@ -25,23 +25,27 @@ var common = (function(){
 
 $(document).ready(function(){
 	common.center('#fvg_wrapper');
-	//$('.fvg_ca_img').zoom({ on:'click' });
+	
+	$(".vg_ca_img img, .fvg_ca_img img").each(function(index, val) {
+		$(this).attr('data-src',$(this).attr('src'));
+		$(this).attr('src','/img/ajax-loader.gif');
+	});
+	$(".vg_ca_img img, .fvg_ca_img img").unveil();
+
 
 	$("#vg_thumbs").on('click','.vg_th_img',function(){
 		var number = $(this).attr('data-item');
 		$("#vg_wrapper").ecarousel({tagC:".vg_ca_img",tagI:".vg_th_img",num:number-1,ind:true});
+		$('.vg_ca_img[data-item='+number+'] img').trigger("unveil");
 	});
 
 	$("#fvg_thumbs").on('click','.fvg_th_img',function(){
 		var number = $(this).attr('data-item');
 		$("#fvg_wrapper").ecarousel({tagC:".fvg_ca_img",tagI:".fvg_th_img",num:number-1,ind:true});
-		$('.fvg_ca_img[data-item='+number+']').trigger('zoom.destroy').zoom({ on:'click' }).trigger('click');
+		$('.fvg_ca_img[data-item='+number+']').zoom({on:'external-click-mouseover'});
+		$('.fvg_ca_img[data-item='+number+'] img').trigger("unveil");
 	});
 	
-	$("#fvg_carousel").on('click','.fvg_ca_img',function(){
-		var number = $(this).attr('data-item');
-		console.log(number);
-	});
 
 	$('.under-layer,#fvg_wrapper-close').on('click',function(){
 		$('.under-layer').hide();
