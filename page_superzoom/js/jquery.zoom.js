@@ -1,5 +1,6 @@
-/*!
-	Zoom 1.7.14
+/*
+	Zoom 1.7.14 
+	Extended (add "on:external-click-mouseover")
 	license: MIT
 	http://www.jacklmoore.com/zoom
 */
@@ -201,6 +202,12 @@
 						.on('mouseenter.zoom', start)
 						.on('mouseleave.zoom', stop)
 						.on(mousemove, zoom.move);
+				} else if (settings.on === 'external-click-mouseover') {
+					zoom.init(); // Preemptively call init because IE7 will fire the mousemove handler before the hover handler.
+					
+					$source
+						.on('mouseenter.zoom', start)
+						.on(mousemove, zoom.move).mouseenter();
 				}
 
 				// Touch fallback
