@@ -42,6 +42,7 @@ $(document).ready(function(){
 	$("#fvg_thumbs").on('click','.fvg_th_img',function(){
 		var number = $(this).attr('data-item');
 		$("#fvg_wrapper").ecarousel({tagC:".fvg_ca_img",tagI:".fvg_th_img",num:number-1,ind:true});
+		$('.fvg_ca_img').trigger('zoom.destroy');
 		$('.fvg_ca_img[data-item='+number+']').zoom({on:'external-click-mouseover'});
 		$('.fvg_ca_img[data-item='+number+'] img').trigger("unveil");
 	});
@@ -50,6 +51,7 @@ $(document).ready(function(){
 	$('.under-layer,#fvg_wrapper-close').on('click',function(){
 		$('.under-layer').hide();
 		$('#fvg_wrapper').css('visibility','hidden');
+		$('.fvg_ca_img').trigger('zoom.destroy');
 	})
 
 	$('#vg_carousel').on('click','.vg_ca_img',function(){
