@@ -1,6 +1,8 @@
 /*
 	Zoom 1.7.14 
-	Extended (add "on:external-click-mouseover")
+	Extended:
+	- add "on:external-click-mouseover"
+	- stop move for small image
 	license: MIT
 	http://www.jacklmoore.com/zoom
 */
