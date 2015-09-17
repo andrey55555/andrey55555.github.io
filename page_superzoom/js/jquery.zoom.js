@@ -25,6 +25,8 @@
 			sourceWidth,
 			xRatio,
 			yRatio,
+			xMove = true,
+			yMove = true,
 			offset,
 			$target = $(target),
 			position = $target.css('position'),
@@ -66,6 +68,12 @@
 
 				xRatio = (img.width - targetWidth) / sourceWidth;
 				yRatio = (img.height - targetHeight) / sourceHeight;
+				
+				xMove = (img.width > targetWidth) ? true : false;
+				yMove = (img.height > targetHeight) ? true : false;
+				
+				if(!xMove){img.style.left = (targetWidth - img.width)/2 + 'px';}
+				if(!yMove){img.style.top = (targetHeight - img.height)/2 + 'px';}
 
 				offset = $source.offset();
 			},
@@ -76,8 +84,8 @@
 				top = Math.max(Math.min(top, sourceHeight), 0);
 				left = Math.max(Math.min(left, sourceWidth), 0);
 
-				img.style.left = (left * -xRatio) + 'px';
-				img.style.top = (top * -yRatio) + 'px';
+				if(xMove){img.style.left = (left * -xRatio) + 'px';}
+				if(yMove){img.style.top = (top * -yRatio) + 'px';}
 			}
 		};
 	};
