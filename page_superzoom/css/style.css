@@ -20,6 +20,15 @@
 /* #fvg_carousel .fvg_ca_img img{max-height:100%;max-width:100%} */
 #fvg_carousel .fvg_ca_img img{left: 50%;max-height:50px;max-width:50px;position:absolute;top:50%;vertical-align:middle}
 /* #fvg_thumbs-wrapper #fvg_thumbs{height:120px;margin:0 auto} */
+#fvg_thumbs-wrapper #fvg_thumbs {
+    border: 2px dotted red;
+    bottom: 15px;
+    display: block;
+    left: 50%;
+    margin-left: -420px;
+    position: absolute;
+    width: 840px;
+}
 #fvg_thumbs-wrapper{bottom:0;margin:0 auto;position:absolute;text-align:center;width:100%}
 #fvg_wrapper .fvg_th_img{border:3px solid grey;border-radius:5px;display:inline-block;height:100px;margin:7px;width:150px}
 #fvg_wrapper .fvg_th_img.select{border:3px solid yellow;}
