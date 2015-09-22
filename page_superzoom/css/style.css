@@ -25,9 +25,9 @@
     bottom: 15px;
     display: block;
     left: 50%;
-    margin-left: -420px;
+    margin-left: -425px;
     position: absolute;
-    width: 840px;
+    width: 850px;
 }
 #fvg_thumbs-wrapper{bottom:0;margin:0 auto;position:absolute;text-align:center;width:100%}
 #fvg_wrapper .fvg_th_img{border:3px solid grey;border-radius:5px;display:inline-block;height:100px;margin:7px;width:150px}
