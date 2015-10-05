@@ -7,35 +7,41 @@ var common_mob = (function(){
 
         // Add div class="placeholder" to form input fields
         method.forms = function (selector){
-                var tpl = '<div class="placeholder"/></div>';
+                var tpl = '<span class="placeholder"></span>';
                 if (selector == undefined){ selector = '.wrapper'; }
 
-		$(selector).find('textarea[data-value]').focus(function(){
-			if($(this).val() == ''){
-				$(this).addClass('focus');
-			};
-		});
+			$(selector).find('input[data-value],textarea[data-value]').focus(function(){
+				if($(this).val() == ''){
+					$(this).addClass('focus');
+				};
+			});
 
-		$(selector).find('input[data-value], textarea[data-value]').each(function() {
-                        var $el = $(this),
-                            $placeholder = '';
+			$(selector).find('input[data-value], textarea[data-value]').each(function() {
+				var $el = $(this),
+					$placeholder = '';
 
-                        $placeholder = $(tpl).insertAfter($el).css({
-                                                                        width: $el.outerWidth(),
-                                                                        height: $el.outerHeight()
-                                                                })
-                                                                .text( $el.attr('data-value') )
-                                                                .addClass($el.attr('class'));
+				$placeholder = $(tpl).insertAfter($el).css({
+																width: $el.outerWidth(),
+																height: $el.outerHeight()
+														})
+														.text( $el.attr('data-value') )
+														.addClass($el.attr('class'));
+console.log('val ',$el.attr('data-value'));
 
-                        if ($el.val() != ''){
-                                $placeholder.fadeOut(30);
-                        }
+				if ($el.val() != ''){
+						$placeholder.fadeOut(30);
+				}
 
-                        $placeholder.bind('click focus', function(){$placeholder.fadeOut(300);$el.focus();});
+				$placeholder.bind('click focus', function(){$el.focus();});
 
-                        $el.bind('blur', function(){if ($el.val() == ''){$placeholder.fadeIn(300);$el.removeClass('focus');}});
-		});
-	}
+				$el.bind('click focus', function(){
+					$placeholder.addClass('focus');
+				});
+				$el.bind('blur', function(){
+					if ($el.val() == ''){$placeholder.removeClass('focus');$el.removeClass('focus');}
+				});
+			});
+		}
 
         // Check inputs is not empty
         method.check_epmty = function (selector) {
