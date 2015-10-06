@@ -5,42 +5,37 @@ var common_mob = (function(){
         method = {};
 
 
-        // Add div class="placeholder" to form input fields
         method.forms = function (selector){
-                var tpl = '<span class="placeholder"></span>';
+                var tpl = '<span class="labl-inp"></span>';
                 if (selector == undefined){ selector = '.wrapper'; }
 
-			$(selector).find('input[data-value],textarea[data-value]').focus(function(){
-				if($(this).val() == ''){
-					$(this).addClass('focus');
-				};
-			});
 
-			$(selector).find('input[data-value], textarea[data-value]').each(function() {
-				var $el = $(this),
-					$placeholder = '';
+				$(selector).find('input[data-value], textarea[data-value]').each(function() {
+					var $el = $(this),
+						$placeholder = '';
 
-				$placeholder = $(tpl).insertAfter($el).css({
-																width: $el.outerWidth(),
-																height: $el.outerHeight()
-														})
-														.text( $el.attr('data-value') )
-														.addClass($el.attr('class'));
-console.log('val ',$el.attr('data-value'));
+					$placeholder = $(tpl).insertBefore($el).text( $el.attr('data-value') );
+					
+					if ($el.val() == ''){ 
+						$placeholder.addClass('reviews__inp'); 
+					}
 
-				if ($el.val() != ''){
-						$placeholder.fadeOut(30);
-				}
+					$placeholder.bind('click focus', function(){$el.focus();});
 
-				$placeholder.bind('click focus', function(){$el.focus();});
-
-				$el.bind('click focus', function(){
-					$placeholder.addClass('focus');
+					$el.bind('click focus', function(){
+						if ($el.val() == ''){$placeholder.removeClass('reviews__inp');$el.addClass('focus');}
+					});
+					
+					$el.bind('blur', function(){
+						$el.removeClass('focus');
+						if ($el.val() == ''){$placeholder.addClass('reviews__inp');}
+					});
 				});
-				$el.bind('blur', function(){
-					if ($el.val() == ''){$placeholder.removeClass('focus');$el.removeClass('focus');}
+				
+				$('.reviews__inp').bind('blur', function(){
+					if ($(this).val() != ''){ $(this).removeClass('valid-error'); }
 				});
-			});
+
 		}
 
         // Check inputs is not empty
@@ -71,23 +66,6 @@ console.log('val ',$el.attr('data-value'));
                         return false;
                 }
         }
-
-
-        // Show/Hide left, right sidebars
-	method.wrapper = function(){
-		if($('.leftside').hasClass('active') || $('.rightside').hasClass('active')){
-			if($('.leftside').hasClass('active')){
-					$('.wrapper').css('height',$('.leftside.active .leftside-block').outerHeight());
-			}
-			if($('.rightside').hasClass('active')){
-					$('.wrapper').css('height',$('.rightside.active .rightside-block').outerHeight());
-                        }
-                }
-                else {
-                        $('.wrapper').css('height','auto');
-                }
-		$('.bg').css('height', $('.wrapper').outerHeight());
-	}
 
 
         return method;
